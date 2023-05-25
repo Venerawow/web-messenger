@@ -6,7 +6,26 @@ import {
 } from './styledComponents';
 import CustomImage from "../customImage/CustomImage";
 
-const CustomButton = ({ text, image, callback, fontSize, isDisabled, borderColor, backgroundColor, isInversionTextColor, activeBackgroundColor,}) => {
+const CustomButton = ({
+                          // eslint-disable-next-line react/prop-types
+                          text,
+                          // eslint-disable-next-line react/prop-types
+                          image,
+                          // eslint-disable-next-line react/prop-types
+                          callback,
+                          // eslint-disable-next-line react/prop-types
+                          fontSize,
+                          // eslint-disable-next-line react/prop-types
+                          isDisabled,
+                          // eslint-disable-next-line react/prop-types
+                          borderColor,
+                          // eslint-disable-next-line react/prop-types
+                          backgroundColor,
+                          // eslint-disable-next-line react/prop-types
+                          isInversionTextColor,
+                          // eslint-disable-next-line react/prop-types
+                          activeBackgroundColor,
+                      }) => {
     return (
         <CustomButtonWrapper
             isDisabled={isDisabled}
@@ -27,7 +46,7 @@ const CustomButton = ({ text, image, callback, fontSize, isDisabled, borderColor
                 backgroundColor={backgroundColor}
             >
                 <ButtonText
-                    //children={text}
+                    children={text}
                     fontSize={fontSize}
                     isInversionTextColor={isInversionTextColor}
                 />

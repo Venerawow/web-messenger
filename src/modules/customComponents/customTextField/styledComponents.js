@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const TextfieldContainer = styled.div`
-    height: 15%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 5px;
+export const TextFieldContainer = styled.div`
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
 `;
 
 export const TextFieldWrapper = styled.div`

@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './App';
 import createSagaMiddleware from 'redux-saga';
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware } from 'redux';
+import { legacy_createStore as createStore} from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './store/reducers/index';
 import rootSaga from './sagas/rootSaga';
