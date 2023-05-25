@@ -3,9 +3,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import * as routes from '../../routes';
 import * as constants from '../../constants/constants';
 
-const AppRouter = () => {
-    const user = true;
-
+const AppRouter = ({
+                       // eslint-disable-next-line react/prop-types
+                       user,
+                   }) => {
     return (
         user ?
             <Switch>
