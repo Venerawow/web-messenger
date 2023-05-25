@@ -1,10 +1,14 @@
 import React from 'react';
 import { QuizWrapper } from './styledComponents';
+import ReadyForGame from './components/readyForGame/ReadyForGame';
 
-const Quiz = () => {
+const Quiz = ({ setIsReadyForGame, isUserReadyToStartQuiz,}) => {
     return (
         <QuizWrapper>
-
+            <ReadyForGame
+                callback={setIsReadyForGame}
+                isUserReadyToStartQuiz={isUserReadyToStartQuiz}
+            />
         </QuizWrapper>
     );
 };
