@@ -1,9 +1,9 @@
-import Firebase from 'firebase';
+import Firebase from 'firebase/package.json';
 import 'firebase/firestore';
 import 'firebase/auth';
-import firebaseConfig  from './config';
+import config  from './config';
 
-Firebase.initializeApp(firebaseConfig);
+Firebase.initializeApp(config);
 
 export const auth = Firebase.auth();
 export const firestore = Firebase.firestore();
