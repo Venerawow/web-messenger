@@ -6,7 +6,8 @@ import {
 import CustomButton from '../customComponents/customButton/CustomButton';
 import googleImage from '../../assets/images/google.svg';
 
-const Login = () => {
+const Login = (//{ signInWithGoogle,}
+     )=> {
     return (
         <LoginWrapper>
             <ButtonContainer>
