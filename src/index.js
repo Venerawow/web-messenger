@@ -1,10 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import createSagaMiddleware from 'redux-saga';
-import { applyMiddleware } from 'redux';
-import { legacy_createStore as createStore} from 'redux'
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './store/reducers/index';
 import rootSaga from './sagas/rootSaga';
@@ -16,7 +15,7 @@ const store = createStore (
     composeWithDevTools(applyMiddleware(sagaMiddleware)),
 )
 
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

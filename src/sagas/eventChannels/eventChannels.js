@@ -5,16 +5,32 @@ import constants from '../../firebase/constants';
 
 export function chatMessagesEventChannel() {
     const listener = eventChannel(
-        emitter => {
+        emmiter => {
             fb.firebase.firestore().collection(constants.MESSAGES).orderBy('createdAt')
                 .onSnapshot({ includeMetadataChanges: true }, snapshot => {
 
                     const messages = snapshot.docChanges().map( message => message.doc.data());
 
-                    emitter(actions.setUserMessage(messages));
+                    emmiter(actions.setUserMessage(messages));
                 });
 
-            return () => fb.firebase.database().ref(constants.MESSAGES).off(listener);
+            fb.firebase.firestore().collection(constants.QUESTIONS)
+                .onSnapshot({ includeMetadataChanges: true }, snapshot => {
+
+                    const questions = snapshot.docChanges().map(question => question.doc.data());
+                    const changes = snapshot.docChanges().map(change => change.type);
+
+                    if (changes[0] === 'added') {
+                        emmiter(actions.setQuestions(questions.length && questions[0]?.questions));
+                    }
+                });
+
+            const listeners = [
+                fb.firebase.database().ref(constants.MESSAGES),
+                fb.firebase.database().ref(constants.QUESTIONS),
+            ];
+
+            return () => listeners.forEach(listener => listener.off(listener));
         }
     );
 

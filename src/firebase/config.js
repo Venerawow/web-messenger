@@ -1,4 +1,4 @@
-const firebaseConfig = {
+const config = {
     apiKey: "AIzaSyA_VMifZkdRx04x49t9EPPzxTEyweRa1IQ",
     authDomain: "web-messenger-37bfd.firebaseapp.com",
     projectId: "web-messenger-37bfd",
@@ -7,4 +7,4 @@ const firebaseConfig = {
     appId: "1:491424882331:web:0fecedcccf28db545b303e"
 };
 
-export default firebaseConfig;
+export default config;

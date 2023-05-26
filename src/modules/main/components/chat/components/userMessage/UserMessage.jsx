@@ -10,9 +10,7 @@ import {
 import CustomImage from '../../../../../customComponents/customImage/CustomImage';
 
 const UserMessage = ({
-                         // eslint-disable-next-line react/prop-types
                          userId,
-                         // eslint-disable-next-line react/prop-types
                          message,
                      }) => {
     return (

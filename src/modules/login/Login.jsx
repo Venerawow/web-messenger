@@ -6,17 +6,15 @@ import {
 import CustomButton from '../customComponents/customButton/CustomButton';
 import googleImage from '../../assets/images/google.svg';
 
-const Login = ({
-                   // eslint-disable-next-line react/prop-types
-                   signInWithGoogle,
-               }) => {
+const Login = () => {
     return (
         <LoginWrapper>
             <ButtonContainer>
                 <CustomButton
+                    onClick={Login}
                     text={'Login with Google'}
                     image={googleImage}
-                    callback={signInWithGoogle}
+                    callback={() => console.log('Click to login')}
                     borderColor={'yellow'}
                     isInversionTextColor
                 >
